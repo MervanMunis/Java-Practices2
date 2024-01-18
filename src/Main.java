@@ -7,10 +7,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        if (AverageCalculator.calculateAverage() > 60)
-            System.out.println("Passed");
-        else
-            System.out.println("Failed");
+//        Average Calculator
+//        if (AverageCalculator.calculateAverage() > 60)
+//            System.out.println("Passed");
+//        else
+//            System.out.println("Failed");
+
+
+        System.out.println(CalculateBMI.bodyMassIndex());
 
     }
 }
