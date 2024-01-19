@@ -10,7 +10,7 @@ public class Main {
 //        To calculate the BODY MASS INDEX UNCOMMENT the code below.
 //        System.out.println(CalculateBMI.bodyMassIndex());
 
-        MineSweeper2 mineSweeper = new MineSweeper2(4,4);
+        MineSweeper mineSweeper = new MineSweeper(4,4);
         mineSweeper.run();
     }
 }

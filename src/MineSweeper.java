@@ -7,12 +7,12 @@
 // Then, if there is mine, then we change to "*" and game over.
 
 import java.util.*;
-public class MineSweeper2 {
+public class MineSweeper {
 
     private final int rowSize;
     private final int columnSize;
 
-    public MineSweeper2(int rowSize, int columnSize) {
+    public MineSweeper(int rowSize, int columnSize) {
         this.rowSize = rowSize;
         this.columnSize = columnSize;
     }
