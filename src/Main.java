@@ -1,3 +1,5 @@
+import AdventureGame.Game;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -10,7 +12,10 @@ public class Main {
 //        To calculate the BODY MASS INDEX UNCOMMENT the code below.
 //        System.out.println(CalculateBMI.bodyMassIndex());
 
-        MineSweeper mineSweeper = new MineSweeper(4,4);
-        mineSweeper.run();
+//        MineSweeper mineSweeper = new MineSweeper(4,4);
+//        mineSweeper.run();
+
+        Game game = new Game();
+        game.start();
     }
 }
