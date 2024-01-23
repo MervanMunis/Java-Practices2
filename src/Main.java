@@ -1,8 +1,12 @@
 import MovieTest.Film;
 import MovieTest.FilmLibrary;
+import MovieTest.IFilm;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,58 +27,34 @@ public class Main {
 //        game.start();
 
         FilmLibrary filmLibrary = new FilmLibrary();
-        Film film = new Film();
+        Film newFilm = new Film();
 
-        film.setTitle("Herry Poter");
-        film.setDirector("Jhon");
-        film.setYear(2000);
-        filmLibrary.add(film);
+        newFilm.setTitle("Demon Slayer");
+        newFilm.setDirector("Mervan Munis");
+        newFilm.setYear(2000);
+        filmLibrary.add(newFilm);
 
-        film.setTitle("Poter");
-        film.setDirector("michler");
-        film.setYear(2003);
-        filmLibrary.add(film);
+        newFilm.setTitle("Naruto");
+        newFilm.setDirector("Hira Munis");
+        newFilm.setYear(2003);
+        filmLibrary.add(newFilm);
 
-        film.setTitle("Herry");
-        film.setDirector("simon");
-        film.setYear(2010);
+        newFilm.setTitle("Ippo");
+        newFilm.setDirector("Sina Munis");
+        newFilm.setYear(2010);
 
-        filmLibrary.add(film);
+        filmLibrary.add(newFilm);
 
-        List<List<Object>> allFilms = new ArrayList<>();
-        for (int i=0; i<filmLibrary.listOfFilms().size(); i++) {
-            List<Object> filmList = new ArrayList<>();
-            filmList.add(filmLibrary.listOfFilms().get(i).getTitle());
-            filmList.add(filmLibrary.listOfFilms().get(i).getDirector());
-            filmList.add(filmLibrary.listOfFilms().get(i).getYear());
-            allFilms.add(filmList);
-        }
-
-        System.out.println(allFilms);
+        System.out.println(filmLibrary.listOfFilms());
 
         System.out.println();
-        filmLibrary.remove("Poter");
+        filmLibrary.remove("Naruto");
 
-        List<List<Object>> allFilms1 = new ArrayList<>();
-        for (int i=0; i<filmLibrary.listOfFilms().size(); i++) {
-            List<Object> filmList = new ArrayList<>();
-            filmList.add(filmLibrary.listOfFilms().get(i).getTitle());
-            filmList.add(filmLibrary.listOfFilms().get(i).getDirector());
-            filmList.add(filmLibrary.listOfFilms().get(i).getYear());
-            allFilms1.add(filmList);
-        }
-        System.out.println(allFilms1);
+
+        System.out.println(filmLibrary.listOfFilms());
 
         System.out.println();
 
-        List<List<Object>> allFilms2 = new ArrayList<>();
-        for (int i=0; i<filmLibrary.searchFilms("Herry").size(); i++) {
-            List<Object> filmList = new ArrayList<>();
-            filmList.add(filmLibrary.searchFilms("Herry").get(i).getTitle());
-            filmList.add(filmLibrary.searchFilms("Herry").get(i).getDirector());
-            filmList.add(filmLibrary.searchFilms("Herry").get(i).getYear());
-            allFilms2.add(filmList);
-        }
-        System.out.println(allFilms2);
+        System.out.println(filmLibrary.searchFilms("Ippo"));
     }
 }

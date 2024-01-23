@@ -1,8 +1,10 @@
 package MovieTest;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class FilmLibrary implements IFilmLibrary{
     private final List<IFilm> films;
@@ -26,19 +28,34 @@ public class FilmLibrary implements IFilmLibrary{
     }
 
     @Override
-    public List<IFilm> listOfFilms() {
-        return this.films;
+    public List<List<Object>> listOfFilms() {
+        List<List<Object>> listFilms =
+                this.films.stream()
+                        .map(film -> {
+                            List<Object> filmList = new ArrayList<>();
+                            filmList.add(film.getTitle());
+                            filmList.add(film.getDirector());
+                            filmList.add(film.getYear());
+                            return filmList;
+                        }).toList();
+
+        return listFilms;
     }
 
     @Override
-    public List<IFilm> searchFilms(String query) {
-        List<IFilm> selectedFilms = new ArrayList<>();
-        for (IFilm film : films) {
-            if (film.getTitle().equals(query) || film.getDirector().equals(query)) {
-                selectedFilms.add(film);
-            }
-        }
-        return selectedFilms;
+    public List<List<Object>> searchFilms(String query) {
+
+        List<List<Object>> listFilms = films.stream()
+                .filter(film -> film.getTitle().equals(query) || film.getDirector().equals(query))
+                .map(film -> {
+                    List<Object> filmList = new ArrayList<>();
+                    filmList.add(film.getTitle());
+                    filmList.add(film.getDirector());
+                    filmList.add(film.getYear());
+                    return filmList;
+                }).collect(Collectors.toList());
+
+        return listFilms;
     }
 
 }

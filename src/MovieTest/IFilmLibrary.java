@@ -8,9 +8,9 @@ public interface IFilmLibrary {
 
     void remove(String title);
 
-    List<IFilm> listOfFilms();
+    List<List<Object>> listOfFilms();
 
-    List<IFilm> searchFilms(String query);
+    List<List<Object>>  searchFilms(String query);
 
 
 }
